@@ -3,11 +3,11 @@
 #include<stdlib.h>
 int main()
 {
-	int n, i, x, k = 1;
+	int n, i, x;
 	char *m, buf, buf_1;
-	printf("Vvedite kolichestvo elementov massiva:\n"); //ввод количества элементов символьного массива
+	printf("Vvedite kolichestvo elementov massiva:\n"); //ГўГўГ®Г¤ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў Г±ГЁГ¬ГўГ®Г«ГјГ­Г®ГЈГ® Г¬Г Г±Г±ГЁГўГ 
 	
-	while (1) //ввод числа n с клавиатуры
+	while (1) //ГўГўГ®Г¤ Г·ГЁГ±Г«Г  n Г± ГЄГ«Г ГўГЁГ ГІГіГ°Г»
 	{
 		x = scanf("%d", &n);
 		if (x)
@@ -26,7 +26,7 @@ int main()
 		}
 	}
 	
-	m = malloc(sizeof(char) * n); //выделение памяти
+	m = malloc(sizeof(char) * n); //ГўГ»Г¤ГҐГ«ГҐГ­ГЁГҐ ГЇГ Г¬ГїГІГЁ
 	if (m == NULL)
 	{
 		printf("ERROR: nelza videlit pamat.");
@@ -34,7 +34,7 @@ int main()
 	}
 	scanf("%c", &buf);
 	
-	printf("Vvedite massiv:\n"); //чтение массива
+	printf("Vvedite massiv:\n"); //Г·ГІГҐГ­ГЁГҐ Г¬Г Г±Г±ГЁГўГ 
 	for (i = 0; i < n; i++)  
 	{
 		x = scanf("%c", &m[i]);
@@ -45,7 +45,7 @@ int main()
 		}
 	}
 	
-	for (i = 0; i < n; i++) //замена на чётных и нечетных местах
+	for (i = 0; i < n; i++) //Г§Г Г¬ГҐГ­Г  Г­Г  Г·ВёГІГ­Г»Гµ ГЁ Г­ГҐГ·ГҐГІГ­Г»Гµ Г¬ГҐГ±ГІГ Гµ
 	{
 		if (i % 2)
 		{
@@ -69,7 +69,7 @@ int main()
 			}
 	}
 	
-	printf("Polychenniy massiv:\n"); //вывод полученного массива
+	printf("Polychenniy massiv:\n"); //ГўГ»ГўГ®Г¤ ГЇГ®Г«ГіГ·ГҐГ­Г­Г®ГЈГ® Г¬Г Г±Г±ГЁГўГ 
 	for (i = 0; i < n; i++) 
 	{
 		printf("%c ", m[i]);
