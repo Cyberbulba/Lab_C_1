@@ -5,9 +5,26 @@ int main()
 {
 	int n, i, x;
 	char *m, buf, buf_1;
-	printf("Vvedite kolichestvo elementov massiva:\n"); //ââîä êîëè÷åñòâà ýëåìåíòîâ ñèìâîëüíîãî ìàññèâà
+	printf("Vvedite kolichestvo elementov massiva:\n");
 	
-	while (1) //ââîä ÷èñëà n ñ êëàâèàòóðû
+	x = scanf("%d", &n); //ввод числа символов массива с клавиатуры с проверкой
+	if (x)
+	{
+		if (n > 100 || n < 1)
+		{
+			printf("ERROR: Vvedite chislo n: 0 < n <= 100.\n");
+			return 0;
+		}
+	}
+	if (!x)
+	{
+
+		printf("ERROR: Vvedite chislo.\n");
+		return 0;
+	}
+
+
+/*	while (1) //ввод числа n с клавиатуры (неудавшаяся провека с циклом)
 	{
 		x = scanf("%d", &n);
 		if (x)
@@ -25,8 +42,8 @@ int main()
 			printf("ERROR: Vvedite chislo.\n");
 		}
 	}
-	
-	m = malloc(sizeof(char) * n); //âûäåëåíèå ïàìÿòè
+*/
+	m = malloc(sizeof(char) * n); //выделение памяти
 	if (m == NULL)
 	{
 		printf("ERROR: nelza videlit pamat.");
@@ -34,18 +51,20 @@ int main()
 	}
 	scanf("%c", &buf);
 	
-	printf("Vvedite massiv:\n"); //÷òåíèå ìàññèâà
+	printf("Vvedite massiv:\n"); //чтение массива
 	for (i = 0; i < n; i++)  
 	{
 		x = scanf("%c", &m[i]);
 		if (x == 0)
 		{
+			while(1)
 			printf("ERROR: Vvedite symbol");
+			free(m);
 			return 0;
 		}
 	}
 	
-	for (i = 0; i < n; i++) //çàìåíà íà ÷¸òíûõ è íå÷åòíûõ ìåñòàõ
+	for (i = 0; i < n; i++) //замена нужных элементов на чётных и нечетных местах
 	{
 		if (i % 2)
 		{
@@ -69,7 +88,7 @@ int main()
 			}
 	}
 	
-	printf("Polychenniy massiv:\n"); //âûâîä ïîëó÷åííîãî ìàññèâà
+	printf("Polychenniy massiv:\n"); //вывод полученного массива
 	for (i = 0; i < n; i++) 
 	{
 		printf("%c ", m[i]);
