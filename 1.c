@@ -55,13 +55,6 @@ int main()
 	for (i = 0; i < n; i++)  
 	{
 		x = scanf("%c", &m[i]);
-		if (x == 0)
-		{
-			while(1)
-			printf("ERROR: Vvedite symbol");
-			free(m);
-			return 0;
-		}
 	}
 	
 	for (i = 0; i < n; i++) //замена нужных элементов на чётных и нечетных местах
